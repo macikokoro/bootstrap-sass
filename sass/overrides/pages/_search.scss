@@ -1,0 +1,17 @@
+//
+// Search Page
+// --------------------------------------------------
+body.page-search {
+  .search-results {
+    h3.title {
+      text-transform: none;
+    }
+    p.search-info {
+      color: $gray-dark;
+      font-style: italic;
+    }
+    li.search-result {
+      border-bottom: 1px dotted $gray-dark;
+    }
+  }
+}

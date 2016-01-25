@@ -1,0 +1,295 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+//** Slideshow
+$background-colors: "gray" #404146,
+                    "gray-light" #C6CAD6,
+                    "orange" #D3733E,
+                    "orange-light" #E09B75,
+                    "maroon" #B93848,
+                    "maroon-light" #C95D63,
+                    "green" #3D9970,
+                    "green-light" #57C292,
+                    "yellow" #FFDC00,
+                    "yellow-light" #DED17D,
+                    "blue" #2F6690,
+                    "blue-light" #3C81B6,
+                    "purple" #824C71,
+                    "purple-light" #BB8AAB;
+
+@each $key, $color in $background-colors {
+  .slideshow-wrapper.#{$key},
+  .ie-overlay.#{$key} {
+    background-color: #{$color};
+  }
+}
+
+.ie-overlay {
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+html.backgroundblendmode {
+  .ie-overlay {
+    display: none;
+  }
+}
+
+body.front {
+  #main-container {
+    padding-bottom: 0;
+    
+    .main-container {
+      width: 100%;
+    }
+  }
+  // Remove unnecessary margin
+  #page-header {
+    display: none;
+  }
+  h1 {
+    @include hide-text;
+    margin: 0;
+    padding: 0;
+  }
+  .col-sm-12 {
+    padding-left:  0;
+    padding-right: 0;
+  }
+  .flexslider {
+    border: none;
+    margin-bottom: 0;
+  }
+  .flex-direction-nav a {
+    height: 50px; // prevents pager from being cut off
+    z-index: 10;
+  }
+  .flex-control-nav {
+    bottom: 20px;
+    z-index: 1000;
+  }
+  .flex-control-paging li a {
+    background: rgba(255,255,255,.5);
+    z-index: 10;
+    &.flex-active {
+      background: rgba(255,255,255,.9);
+    }
+  }
+  .flex-direction-nav a:before {
+    color: rgba(255,255,255,.8);
+    text-shadow: (0,0,0,0.3);
+  }
+  .slideshow-wrapper {
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: $white;
+    min-height: 500px;
+
+    .slideshow-body {
+      margin-bottom: 30px;
+    }
+    .slideshow-inner {
+      @include container;
+      @include text-shadow(0 1px 1px rgba(0,0,0,0.75));
+      position: relative;
+      z-index: 10;
+    }
+    h2 {
+      @include text-shadow(0 2px 2px rgba(0,0,0,0.5));
+      font-size: $font-size-h1;
+      color: $white;
+    }
+    a {
+      margin-top: 30px;
+      font-size: $font-size-large;
+      text-transform: uppercase;
+      color: $text-color;
+      padding: 10px 15px;
+      background-color: $gray-lighter;
+      border-radius: 4px;
+      @include text-shadow(none);
+
+      &:hover, &:focus{
+        text-decoration: none;
+        background-color: $white;
+      }
+      @media (max-width: $screen-sm-max) {
+        font-size: $font-size-base;
+        padding: 5px 10px;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      min-height: 550px;
+    }
+    @media (min-width: $screen-lg-min) {
+      min-height: 600px;
+    }
+  }
+
+  //** Call or contact
+  #block-boxes-call-to-contact {
+    background-image: url("../images/background-call_to_action.jpg");
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
+    .boxes-box-content {
+      @include container;
+      @include text-shadow(0 1px 1px rgba(0,0,0,0.75));
+      color: $white;
+      text-align: center;
+      p {
+        font-size: $font-size-large;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  //** News and Highlights
+  #block-views-news-and-highlights-block {
+    @include container;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    .block-title,
+    .view-header {
+      text-align: center;
+    }
+    .view-header {
+      color: $gray-dark;
+      padding-bottom: 20px;
+    }
+    .views-row {
+      @include make-xs-column(6);
+      @include make-md-column(3);
+
+      // Box title
+      .views-field-field-front-box-title h3 {
+        background-color: $gray-darker;
+        color: $white;
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+        padding: 7px;
+      }
+      // Body of box
+      .views-field-title,
+      .views-field-body,
+      .views-field-view-node {
+        border-left:  $border;
+        border-right: $border;
+        padding: 0 10px 7px;
+        background-color: $gray-lighter;
+      }
+      // Title
+      .views-field-title {
+        font-family: $headings-font-family;
+        font-size: 18px;
+        text-transform: uppercase;
+        line-height: 1.25em;
+        padding-top: 10px;
+      }
+      // Read more
+      .views-field-view-node {
+        border-bottom: $border;
+      }
+    }
+  }
+
+  //** Our Clients Agree block
+  #block-boxes-call-to-action {
+    background-image: url("../images/background-clients_agree.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+    .boxes-box-content {
+      @include container;
+      color: $white;
+
+      h2 {
+        color: $white;
+        margin-bottom: 50px
+      }
+      .text {
+        font-size: $font-size-large;
+        max-width: $screen-md;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  //** Homepage Teaser
+  .view-homepage-teaser-upper {
+    .has-color {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h2 {
+      margin-top: 0;
+      padding-top: 30px;
+    }
+    .media-location-right,
+    .media-location-left {
+
+      .field-type-image,
+      .field-type-video-embed-field {
+        @include make-xs-column(12,0);
+        @include make-md-column(6,0);
+      }
+      .field-name-body,
+      .field-name-title {
+        @include make-xs-column(12);
+        @include make-md-column(6,100px);
+      }     
+      @media (max-width: $screen-xs-max) {
+        .field-type-image,
+        .field-type-video-embed-field {
+          // padding: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+  }
+
+}
+
+//** About Us Footer Block link and call us links
+#boxes-box-about_us,
+#block-boxes-call-to-contact {
+  .boxes-box-content a {
+    color: $white;
+    background-color: transparentize($white, .75);
+    padding: 7px 12px;
+    border: 1px solid $white;
+    border-radius: $border-radius-base;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      background-color: transparentize($white, .65)
+    }
+    &:active { background-color: transparentize($white, .9); }
+  }
+}
+// Just call links
+#block-boxes-call-to-contact .boxes-box-content a {
+  text-transform: uppercase;
+  font-size: $font-size-base;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+// Just about us
+#boxes-box-about_us .boxes-box-content a {
+  @include inline-block;
+  text-align: center;
+  text-decoration: none;
+
+}

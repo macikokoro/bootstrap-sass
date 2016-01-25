@@ -1,0 +1,147 @@
+//
+// Footer
+// --------------------------------------------------
+
+footer {
+  color: $gray;  
+  font-size: $font-size-small;
+  font-weight: $font-weight-light;
+
+  h2 {
+    color: $white;
+    font-size: $font-size-h4;
+    margin-top: 0;
+  }
+  a {
+    color: $gray;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus  { color: $white; }
+    &:active { color: $gray-light; }
+  }
+}
+
+#block-boxes-location,
+#block-boxes-about-us,
+#block-menu-block-3,
+#block-menu-block-4,
+#block-menu-block-5,
+#block-menu-block-6 {
+  @include make-xs-column(6);
+  padding-bottom: 20px;
+}
+
+// Background Image
+.footer-wrapper {
+  @include clearfix;
+  background: url('../images/footer_bg.png') $gray-dark;
+  padding: 45px 0 30px;
+}
+.footer-contents {
+  padding-right: 0;
+  padding-left: 0;
+}
+.region-footer-left,
+.region-footer-right {
+  @include make-xs-column(12);
+}
+
+// About Centroid
+#block-boxes-about-us {
+  @include make-md-column(8);
+}
+// Location
+#block-boxes-location {
+  @include make-md-column(4);
+  a {
+    color: $orange;
+  }
+}
+
+// Info
+.region-footer-left {
+  @include make-md-column(7,0);
+}
+// Menu links
+.region-footer-right {
+  @include make-md-column(4,0);
+  float: right !important;
+
+  h2 { margin-bottom: 4px; }
+  a { padding: 2px 0; }
+}
+
+#block-menu-block-3 a {
+  text-transform: capitalize;
+}
+
+// TEMP FIX. FIX DRUPAL MENU INSTEAD
+// =================================
+#block-menu-block-3 .sub-menu { display: none; }
+// ================================
+
+// Knowledgebase and our company float right
+#block-menu-block-5,
+#block-menu-block-6 {
+  float: right;
+}
+
+//== Lower Footer
+//
+//## 
+// Contain
+.region-footer-lower {
+  @include container;
+  padding: $padding-large-vertical 0;
+  color: $gray-darker;
+}
+#block-boxes-copyright,
+#boxes-box-social_media {
+  @include make-xs-column(12);
+}
+//** Copyright
+#block-boxes-copyright {
+  @include make-lg-column(8);
+  padding-top: $padding-large-vertical;
+
+  img {
+    margin-top: -$padding-large-vertical;
+    margin-right: 10px;
+  }
+}
+
+//** Social Media
+$social-media-links: facebook, linkedin, twitter, email;
+
+#boxes-box-social_media {
+  @include make-lg-column(4);
+  float: right;
+  @media (max-width: $screen-lg) {
+    width: 260px;
+    margin: 0 auto;
+    float: none;
+  }
+  a {
+    text-indent: -9999px;
+    height: 45px;
+    width: 45px;
+    display: block;
+    float: left;
+    margin-left: $padding-base-horizontal;
+  }
+}
+@each $social-site in $social-media-links {
+  a.#{$social-site} {
+    background-image: url('../images/social-#{$social-site}.png');
+    background-size: 45px;
+
+    &:hover,
+    &:focus {
+      background-image: url('../images/social-#{$social-site}-hover.png');
+    }
+    &:active {
+      opacity: .8;
+    }
+  }
+}

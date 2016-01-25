@@ -1,0 +1,71 @@
+//
+// Views Pages
+// --------------------------------------------------
+// Knowledgebase, news and events, about us, etc.
+
+.view-knowledgebase,
+.view-news,
+.view-blog,
+.view-resources,
+.view-webinars,
+ {
+  h2 {
+    font-size: $font-size-h3;
+    text-transform: none;
+    a { color: $text-color; }
+  }
+  .views-row {
+    border-bottom: $border;
+    // background-color: $gray-lighter;
+    margin: 20px 0;
+    padding: 0 0 20px;
+
+    &.views-row-first {
+      margin-top: 0;
+    }
+    &.views-row-last {
+      border-bottom: none;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+  .field-name-author,
+  .field-name-post-date {
+    color: $gray-dark;
+    font-style: italic;
+  }
+  .field-name-post-date {
+    float: left;
+    margin-right: 5px;
+  }
+  // Read more
+  .field-name-node-link {
+    // border-top: $border;
+    padding-top: 5px;
+    margin-top: 5px;
+  }
+  // Event Date info
+  .views-field-field-date,
+  .views-field-field-location {
+    font-weight: $font-weight-bold;
+  }
+  .views-label-field-date {
+    float: left;
+    margin-right: .5em;
+  }
+}
+
+.views-exposed-widgets {
+  .views-widget-filter-keys {
+    padding-right: 0;
+    input { border-radius: 5px 0 0 5px; }
+  }
+  .views-exposed-widget button.form-submit {
+    margin-top: 1.9em;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+

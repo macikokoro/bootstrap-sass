@@ -1,0 +1,23 @@
+#page-header {
+  background: url('../images/bg_greyzz_@2X.png');
+  background-size: 149px 139px;
+  border-bottom: 3px solid $orange;
+  margin-bottom: 25px; // Same as page-header from line 144 of _type.scss;
+  padding: 35px 0 20px;
+
+  @media (max-width: $screen-sm-max) {
+    padding: 15px;
+  }
+
+  h1 {
+    text-transform: none;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  h3 {
+    font-family: $font-family-base;
+    text-transform: none;
+    font-size: $font-size-base;
+    margin-top: 0;
+  }
+}

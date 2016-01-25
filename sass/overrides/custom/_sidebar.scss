@@ -1,0 +1,68 @@
+//
+// Services Menu
+// --------------------------------------------------
+
+// .region-sidebar-first {
+//   margin-top: 25px; // Same as page-header from line 144 of _type.scss
+// }
+
+.region-sidebar-first .block-menu,
+.region-sidebar-first .block-menu-block, {
+  ul > li > a {
+    color: $gray-darker;
+    font-size: $font-size-base - 1;
+    line-height: $headings-line-height;
+    @include easy-transition;
+
+    &:hover, &:focus, &.active {
+      color: $orange;
+      text-decoration: none;
+    }
+    &.active {
+      font-weight: bold;
+    }
+  }
+
+  // Remove bullets from children
+  li > ul {
+    padding-left: 25px;
+    padding-bottom: 5px;
+    > li {
+      list-style: none;
+      line-height: $headings-line-height;
+      padding: 3px 6px 3px 0;
+      
+      &.first > a {
+        padding-top: 0;
+      }
+    }
+  }
+  // Top level expanded and collapsed
+  ul.menu > li {
+    & > a {
+      padding: 12px 10px;
+      border-top: $border;
+    }
+    &.collapsed > a {
+      background: url('../images/icon-menu-collapsed.png') 10px center no-repeat;
+      background-size: 6px 9px;
+      padding-left: 25px;
+    }
+    &.expanded > a {
+      background: url('../images/icon-menu-expanded.png') 10px center no-repeat;
+      background-size: 9px 6px;
+      border-top: $border;
+      padding-left: 25px;
+    }
+    &.first > a {
+      border-top: none;
+    }
+  }
+  
+}
+
+@media (min-width: $screen-sm-min) {
+  aside.col-sm-3 {
+    padding-left: 0;
+  }
+}

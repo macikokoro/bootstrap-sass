@@ -1,0 +1,146 @@
+// Superfish main navigation
+#block-superfish-1 {
+  float: right;
+  clear: right;
+  padding-bottom: $header-nav-padding-bottom;
+
+  > ul > li {
+    padding: 0 15px;
+
+    &.first { padding-left: 0; }
+    &.last  { padding-right: 0; }
+
+    & > a {
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      color: $text-color;
+
+      &:hover, &:focus {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+  }
+}
+
+.sf-megamenu {
+  // @include box-shadow(inset 0 1px 2px rgba(0,0,0,0.3));
+  border: $border;
+  background-color: $gray-lighter;
+  font-size: $font-size-small;
+  padding: 15px;
+  // All but the megamenu are positioned relative to the top of the <a>
+  // This moves the dropdown 1em plus the padding plus the border to
+  // position it properly. ¯\_(ツ)_/¯
+  top: $font-size-small + $header-nav-padding-bottom + $header-border-height !important;
+
+  > a {
+    color: $text-color;
+  }
+  li > a {
+    font-weight: $font-weight-normal;
+    color: $text-color;
+    padding: 4px 0;
+  }
+}
+// services secondary headings
+.sf-megamenu-column > a {
+  font-weight: $font-weight-bold;
+  color: $text-color;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+// Actual Menu and hover effects
+.sf-menu {
+  // Just the services hover
+  li.sf-item-2 { position: static; }
+  .sf-item-2 .sf-megamenu {
+    left: 0;
+    top: $header-height-total !important; // header height;
+
+    &,
+    & > li.sf-megamenu-wrapper,
+    & > li.sf-megamenu-wrapper > ol, {
+      width: 100% !important;
+    }
+    & > li.sf-megamenu-wrapper > ol > li {
+      margin-bottom: 20px;
+
+      @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+        width: 50% !important;
+        &.odd { clear: left; }
+      }
+      @media (min-width: $screen-md-min) {
+        width: 33.33334% !important;
+        &.sf-item-4 {
+          clear: left;
+        }
+      }
+    }
+  }
+}
+
+
+//== Responsive
+//
+//##
+// Mobile responsive menu 
+//
+// Special theming is required when using superfish
+@media (max-width: $screen-xs-max) {
+  #block-superfish-1 {
+    > ul > li {
+      padding: 0;
+    }
+  }
+  .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+body.logged-in {
+  #block-superfish-1.contextual-links-region {
+    position: inherit;
+    .contextual-links-wrapper {
+      top: 50px;
+    }
+  }
+}
+
+#block-superfish-1 {
+  > .sf-accordion-toggle {  display: none; }
+  > .sf-hidden {
+    display: block;
+    left: auto !important;
+    position: relative;
+    top: auto !important;
+
+    li {
+      a {
+        color: $text-color;
+        background: url('../images/icon-menu-collapsed.png') left no-repeat;
+        background-size: 6px 9px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+      }
+      &.sf-expanded > a {
+        background: url('../images/icon-menu-expanded.png') left no-repeat;
+        background-size: 9px 6px;
+      }
+      // Show Heirarchy
+      ul {
+        padding-left: 15px;
+      }
+      &.sf-no-children a,
+      &.sf-clone-parent a {
+        background-image: none;
+      }
+      &.sf-clone-parent { font-weight: bold; }
+    }
+  }
+
+}
+

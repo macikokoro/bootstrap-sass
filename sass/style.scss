@@ -1,0 +1,115 @@
+// Styles and selectors can be tested quickly in this file,
+// but for actual implementaation: create or find the 
+// respective file in /overrides and make your changes there.
+
+//
+// Compass Includes
+// --------------------------------------------------
+
+// Compass cross browser compatiblity tools.
+@import "compass/css3";
+@import "compass/css3/user-interface";
+// @import "rgbapng";
+
+// Better than Drupal's clearfix.
+@import "compass/utilities/general/clearfix";
+
+
+//
+// Bootstrap Overrides
+// --------------------------------------------------
+
+// Core variables and mixins
+@import "overrides/__variables.scss";
+@import "overrides/__mixins.scss";
+
+// Reset and dependencies
+// ----------
+@import "overrides/reset/_glyphicons.scss";
+@import "overrides/reset/_normalize.scss";
+@import "overrides/reset/_print.scss";
+
+// Core CSS
+// ----------
+@import "overrides/core/_buttons.scss";
+@import "overrides/core/_code.scss";
+@import "overrides/core/_forms.scss";
+@import "overrides/core/_grid.scss";
+@import "overrides/core/_scaffolding.scss";
+@import "overrides/core/_tables.scss";
+@import "overrides/core/_type.scss";
+
+// Components
+// ----------
+@import "overrides/components/_alerts.scss";
+@import "overrides/components/_badges.scss";
+@import "overrides/components/_breadcrumbs.scss";
+@import "overrides/components/_button-groups.scss";
+@import "overrides/components/_close.scss";
+@import "overrides/components/_component-animations.scss";
+@import "overrides/components/_dropdowns.scss";
+@import "overrides/components/_input-groups.scss";
+@import "overrides/components/_jumbotron.scss";
+@import "overrides/components/_labels.scss";
+@import "overrides/components/_list-group.scss";
+@import "overrides/components/_media.scss";
+@import "overrides/components/_navbar.scss";
+@import "overrides/components/_navs.scss";
+@import "overrides/components/_pager.scss";
+@import "overrides/components/_pagination.scss";
+@import "overrides/components/_panels.scss";
+@import "overrides/components/_progress-bars.scss";
+@import "overrides/components/_responsive-embed.scss";
+@import "overrides/components/_thumbnails.scss";
+@import "overrides/components/_wells.scss";
+
+// Components w/ JavaScript
+// ----------
+@import "overrides/js_components/_carousel.scss";
+@import "overrides/js_components/_modals.scss";
+@import "overrides/js_components/_popovers.scss";
+@import "overrides/js_components/_tooltip.scss";
+
+// Utility classes
+// ----------
+@import "overrides/utility/_responsive-utilities.scss";
+@import "overrides/utility/_utilities.scss";
+
+// Pages CSS
+// ----------
+// @import "overrides/pages/_foo.scss"
+@import "overrides/pages/_basic-page.scss";
+@import "overrides/pages/_contact-us.scss";
+@import "overrides/pages/_homepage.scss";
+@import "overrides/pages/_resource.scss";
+@import "overrides/pages/_search.scss";
+@import "overrides/pages/_views-pages.scss";
+
+// Custom CSS
+// ----------
+//   Place the file in the respective folder, e.g. components or core
+@import "overrides/custom/_footer.scss";
+@import "overrides/custom/_page-header.scss";
+@import "overrides/custom/_responsive-video.scss";
+@import "overrides/custom/_sidebar.scss";
+@import "overrides/custom/_superfish.scss";
+
+// html,
+// body {
+//   height: 100%;
+//   width: 100%;
+//   overflow: auto;
+//   // position: fixed;
+// }
+
+// Logged in
+#admin-menu {
+  z-index: 9999;
+}
+
+body.toolbar #navbar {
+  top: 30px;
+}
+body.toolbar.toolbar-drawer #navbar {
+  top: 64px;
+}
